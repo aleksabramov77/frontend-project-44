@@ -3,9 +3,9 @@ import { readAnswer } from '../common/index.js';
 
 function correctAnswerCreator() {
   const operator = generateOperator();
-  const digits = operator === '*' ? 1 : 2;
-  const leftOperand = generateNumber(digits);
-  const rightOperand = generateNumber(digits);
+  const max = operator === '*' ? 10 : 100;
+  const leftOperand = generateNumber(max);
+  const rightOperand = generateNumber(max);
 
   const expression = `${leftOperand} ${operator} ${rightOperand}`;
 

@@ -1,7 +1,7 @@
 import { CORRECT_ATTEMPTS_COUNT } from './constants.js';
 
-export function generateNumber(digits = 2) {
-  return Math.floor(Math.random() * 10 ** digits);
+export function generateNumber(max = 100, min = 0) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 export function generateOperator() {
