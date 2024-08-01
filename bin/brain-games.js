@@ -4,5 +4,5 @@ import { sayHello } from '../src/utils.js';
 
 console.log('node bin/brain-games.js');
 console.log('Welcome to the Brain Games!');
-const name = readUserName();
-sayHello(name);
+const userName = readUserName();
+sayHello(userName);
