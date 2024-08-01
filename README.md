@@ -12,3 +12,6 @@
 
 ### Brain-gcd (install and run)
 [![asciicast](https://asciinema.org/a/QpwRj9p58Yde1vRN2dvgnV39T.svg)](https://asciinema.org/a/QpwRj9p58Yde1vRN2dvgnV39T)
+
+### Brain-progression (install and run)
+[![asciicast](https://asciinema.org/a/cvOWFBsaoHOCWMCZ7D0kCVPpa.svg)](https://asciinema.org/a/cvOWFBsaoHOCWMCZ7D0kCVPpa)
