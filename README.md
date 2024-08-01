@@ -6,3 +6,6 @@
 
 ### Brain-even (install and run)
 [![asciicast](https://asciinema.org/a/LgwqgT6hu7XMxvQ0kdxEoxwUA.svg)](https://asciinema.org/a/LgwqgT6hu7XMxvQ0kdxEoxwUA)
+
+### Brain-calc (install and run)
+[![asciicast](https://asciinema.org/a/Zy5hOdwf28OUPj9ZSt2X12R5T.svg)](https://asciinema.org/a/Zy5hOdwf28OUPj9ZSt2X12R5T)
