@@ -9,3 +9,6 @@
 
 ### Brain-calc (install and run)
 [![asciicast](https://asciinema.org/a/Zy5hOdwf28OUPj9ZSt2X12R5T.svg)](https://asciinema.org/a/Zy5hOdwf28OUPj9ZSt2X12R5T)
+
+### Brain-gcd (install and run)
+[![asciicast](https://asciinema.org/a/QpwRj9p58Yde1vRN2dvgnV39T.svg)](https://asciinema.org/a/QpwRj9p58Yde1vRN2dvgnV39T)
