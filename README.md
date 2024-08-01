@@ -15,3 +15,6 @@
 
 ### Brain-progression (install and run)
 [![asciicast](https://asciinema.org/a/cvOWFBsaoHOCWMCZ7D0kCVPpa.svg)](https://asciinema.org/a/cvOWFBsaoHOCWMCZ7D0kCVPpa)
+
+### Brain-prime (install and run)
+[![asciicast](https://asciinema.org/a/CitQH74DDLs32NyxFmNlGJD7f.svg)](https://asciinema.org/a/CitQH74DDLs32NyxFmNlGJD7f)

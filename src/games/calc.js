@@ -1,5 +1,11 @@
-import { gameProcess, generateNumber, generateOperator } from './utils.js';
+import { gameProcess, generateNumber } from './utils.js';
 import { readAnswer } from '../common/index.js';
+
+function generateOperator() {
+  const operators = ['+', '-', '*'];
+
+  return operators[Math.floor(operators.length * Math.random())];
+}
 
 function correctAnswerCreator() {
   const operator = generateOperator();
