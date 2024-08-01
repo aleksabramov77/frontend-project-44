@@ -4,15 +4,6 @@ export function generateNumber(max = 100, min = 0) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export function generateOperator() {
-  const operators = ['+', '-', '*'];
-  return operators[Math.floor(operators.length * Math.random())];
-}
-
-export function printWrongResult(answer, correctAnswer) {
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-}
-
 export function gameProcess(title, correctAnswerCreator, userAnswerCreator) {
   console.log(title);
 
@@ -27,7 +18,7 @@ export function gameProcess(title, correctAnswerCreator, userAnswerCreator) {
       console.log('Correct!');
       correctAttemptsCount += 1;
     } else {
-      printWrongResult(userAnswer, correctAnswer);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
 
       return false;
     }

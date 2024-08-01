@@ -4,12 +4,12 @@ import {
 } from './utils.js';
 
 function correctAnswerCreator() {
-  const currentNumber = generateNumber();
+  const hiddenNumber = generateNumber();
 
-  console.log(`Question: ${currentNumber}`);
+  console.log(`Question: ${hiddenNumber}`);
 
-  const isCurrentNumberEval = currentNumber % 2 === 0;
-  return isCurrentNumberEval ? 'yes' : 'no';
+  const isHiddenNumberEval = hiddenNumber % 2 === 0;
+  return isHiddenNumberEval ? 'yes' : 'no';
 }
 
 function userAnswerCreator() {
