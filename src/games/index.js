@@ -1,5 +1,7 @@
-export { playEven } from './even.js';
-export { playCalc } from './calc.js';
-export { playGcd } from './gcd.js';
-export { playProgression } from './progression.js';
-export { playPrime } from './prime.js';
+import playEven  from './even.js';
+import playCalc  from './calc.js';
+import playGcd  from './gcd.js';
+import playProgression  from './progression.js';
+import playPrime  from './prime.js';
+
+export {playEven, playCalc,playGcd,playProgression,playPrime}

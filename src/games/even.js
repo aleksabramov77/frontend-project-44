@@ -2,6 +2,7 @@ import { readAnswer } from '../common/index.js';
 import {
   gameProcess, generateNumber,
 } from './utils.js';
+import playCalc from './calc.js';
 
 function correctAnswerCreator() {
   const hiddenNumber = generateNumber();
@@ -16,6 +17,8 @@ function userAnswerCreator() {
   return readAnswer();
 }
 
-export function playEven() {
+function playEven() {
   return gameProcess('Answer "yes" if the number is even, otherwise answer "no".', correctAnswerCreator, userAnswerCreator);
 }
+
+export default playEven;

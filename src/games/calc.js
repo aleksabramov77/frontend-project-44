@@ -25,6 +25,8 @@ function userAnswerCreator() {
   return Number(readAnswer());
 }
 
-export function playCalc() {
+function playCalc() {
   return gameProcess('What is the result of the expression?', correctAnswerCreator, userAnswerCreator);
 }
+
+export default playCalc;

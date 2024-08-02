@@ -1,1 +1,1 @@
-export const state = { userName: undefined };
+export default { userName: undefined };
