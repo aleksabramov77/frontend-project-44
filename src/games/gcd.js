@@ -1,5 +1,6 @@
 import { gameProcess, generateNumber } from './utils.js';
 import { readAnswer } from '../common/index.js';
+import playCalc from './calc.js';
 
 function getGcd(number1, number2) {
   let a = number1;
@@ -30,6 +31,8 @@ function userAnswerCreator() {
   return Number(readAnswer());
 }
 
-export function playGcd() {
+function playGcd() {
   return gameProcess('Find the greatest common divisor of given numbers.', correctAnswerCreator, userAnswerCreator);
 }
+
+export default playGcd;

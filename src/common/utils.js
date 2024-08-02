@@ -1,5 +1,5 @@
 import { readUserName } from './cli.js';
-import { state } from './state.js';
+import state from './state.js';
 
 export function initialization() {
   console.log('Welcome to the Brain Games!');

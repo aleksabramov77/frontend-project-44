@@ -1,5 +1,6 @@
 import { gameProcess, generateNumber } from './utils.js';
 import { readAnswer } from '../common/index.js';
+import playCalc from './calc.js';
 
 const MIN_PROGRESSION_LENGTH = 5;
 
@@ -32,6 +33,8 @@ function userAnswerCreator() {
   return Number(readAnswer());
 }
 
-export function playProgression() {
+function playProgression() {
   return gameProcess('What number is missing in the progression?', correctAnswerCreator, userAnswerCreator);
 }
+
+export default playProgression;
