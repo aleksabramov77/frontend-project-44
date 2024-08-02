@@ -1,6 +1,5 @@
 import { gameProcess, generateNumber } from './utils.js';
 import { readAnswer } from '../common/index.js';
-import playCalc from './calc.js';
 
 function isPrime(num) {
   if (num <= 1) return false;

@@ -1,6 +1,5 @@
 import { gameProcess, generateNumber } from './utils.js';
 import { readAnswer } from '../common/index.js';
-import playCalc from './calc.js';
 
 const MIN_PROGRESSION_LENGTH = 5;
 
