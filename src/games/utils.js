@@ -11,7 +11,6 @@ export function gameProcess(title, correctAnswerCreator, userAnswerCreator) {
 
   while (CORRECT_ATTEMPTS_COUNT > correctAttemptsCount) {
     const correctAnswer = correctAnswerCreator();
-
     const userAnswer = userAnswerCreator();
 
     if (userAnswer === correctAnswer) {
