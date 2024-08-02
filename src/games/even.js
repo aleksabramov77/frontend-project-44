@@ -2,7 +2,6 @@ import { readAnswer } from '../common/index.js';
 import {
   gameProcess, generateNumber,
 } from './utils.js';
-import playCalc from './calc.js';
 
 function correctAnswerCreator() {
   const hiddenNumber = generateNumber();

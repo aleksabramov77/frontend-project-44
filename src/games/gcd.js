@@ -1,6 +1,5 @@
 import { gameProcess, generateNumber } from './utils.js';
 import { readAnswer } from '../common/index.js';
-import playCalc from './calc.js';
 
 function getGcd(number1, number2) {
   let a = number1;
