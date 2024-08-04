@@ -1,9 +1,8 @@
-import { readAnswer } from '../common/index.js';
 import {
-  gameProcess, generateNumber,
+  runGameProcess, generateNumber,
 } from './utils.js';
 
-function correctAnswerCreator() {
+function createCorrectAnswer() {
   const hiddenNumber = generateNumber();
 
   console.log(`Question: ${hiddenNumber}`);
@@ -12,12 +11,8 @@ function correctAnswerCreator() {
   return isHiddenNumberEval ? 'yes' : 'no';
 }
 
-function userAnswerCreator() {
-  return readAnswer();
-}
-
 function playEven() {
-  return gameProcess('Answer "yes" if the number is even, otherwise answer "no".', correctAnswerCreator, userAnswerCreator);
+  return runGameProcess('Answer "yes" if the number is even, otherwise answer "no".', createCorrectAnswer);
 }
 
 export default playEven;

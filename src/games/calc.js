@@ -1,5 +1,4 @@
-import { gameProcess, generateNumber } from './utils.js';
-import { readAnswer } from '../common/index.js';
+import { runGameProcess, generateNumber } from './utils.js';
 
 function generateOperator() {
   const operators = ['+', '-', '*'];
@@ -7,7 +6,7 @@ function generateOperator() {
   return operators[Math.floor(operators.length * Math.random())];
 }
 
-function correctAnswerCreator() {
+function createCorrectAnswer() {
   const operator = generateOperator();
   const max = operator === '*' ? 10 : 100;
   const leftOperand = generateNumber(max);
@@ -18,15 +17,11 @@ function correctAnswerCreator() {
   console.log(`Question: ${expression}`);
 
   // eslint-disable-next-line no-eval
-  return eval(expression);
-}
-
-function userAnswerCreator() {
-  return Number(readAnswer());
+  return eval(expression).toString();
 }
 
 function playCalc() {
-  return gameProcess('What is the result of the expression?', correctAnswerCreator, userAnswerCreator);
+  return runGameProcess('What is the result of the expression?', createCorrectAnswer);
 }
 
 export default playCalc;
