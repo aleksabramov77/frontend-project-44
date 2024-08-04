@@ -1,9 +1,8 @@
-import { gameProcess, generateNumber } from './utils.js';
-import { readAnswer } from '../common/index.js';
+import { runGameProcess, generateNumber } from './utils.js';
 
 const MIN_PROGRESSION_LENGTH = 5;
 
-function correctAnswerCreator() {
+function createCorrectAnswer() {
   const progressionLength = generateNumber(10, MIN_PROGRESSION_LENGTH);
   const startNumberInPosition = generateNumber();
   const progressionStep = generateNumber(5, 1);
@@ -25,15 +24,11 @@ function correctAnswerCreator() {
 
   console.log(`Question: ${progressionString}`);
 
-  return hiddenNumber;
-}
-
-function userAnswerCreator() {
-  return Number(readAnswer());
+  return hiddenNumber.toString();
 }
 
 function playProgression() {
-  return gameProcess('What number is missing in the progression?', correctAnswerCreator, userAnswerCreator);
+  return runGameProcess('What number is missing in the progression?', createCorrectAnswer);
 }
 
 export default playProgression;

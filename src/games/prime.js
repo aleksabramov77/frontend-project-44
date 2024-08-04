@@ -1,5 +1,4 @@
-import { gameProcess, generateNumber } from './utils.js';
-import { readAnswer } from '../common/index.js';
+import { runGameProcess, generateNumber } from './utils.js';
 
 function isPrime(num) {
   if (num <= 1) return false;
@@ -13,7 +12,7 @@ function isPrime(num) {
   return true;
 }
 
-function correctAnswerCreator() {
+function createCorrectAnswer() {
   const hiddenNumber = generateNumber();
 
   console.log(`Question: ${hiddenNumber}`);
@@ -23,12 +22,8 @@ function correctAnswerCreator() {
   return isHiddenNumberPrime ? 'yes' : 'no';
 }
 
-function userAnswerCreator() {
-  return readAnswer();
-}
-
 function playPrime() {
-  return gameProcess('Answer "yes" if given number is prime. Otherwise answer "no".', correctAnswerCreator, userAnswerCreator);
+  return runGameProcess('Answer "yes" if given number is prime. Otherwise answer "no".', createCorrectAnswer);
 }
 
 export default playPrime;
