@@ -1,4 +1,4 @@
-import { runGameProcess, generateNumber } from './utils.js';
+import { generateNumber, runGameProcess } from '../index.js';
 
 function isPrime(num) {
   if (num <= 1) return false;
@@ -12,18 +12,16 @@ function isPrime(num) {
   return true;
 }
 
-function createCorrectAnswer() {
+function getRoundData() {
   const hiddenNumber = generateNumber();
-
-  console.log(`Question: ${hiddenNumber}`);
-
   const isHiddenNumberPrime = isPrime(hiddenNumber);
 
-  return isHiddenNumberPrime ? 'yes' : 'no';
+  return { question: hiddenNumber, correctAnswer: isHiddenNumberPrime ? 'yes' : 'no' };
 }
 
-function playPrime() {
-  return runGameProcess('Answer "yes" if given number is prime. Otherwise answer "no".', createCorrectAnswer);
-}
-
-export default playPrime;
+export default () => {
+  runGameProcess(
+    'Answer "yes" if given number is prime. Otherwise answer "no".',
+    getRoundData,
+  );
+};

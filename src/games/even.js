@@ -1,18 +1,15 @@
-import {
-  runGameProcess, generateNumber,
-} from './utils.js';
+import { generateNumber, runGameProcess } from '../index.js';
 
-function createCorrectAnswer() {
+function getRoundData() {
   const hiddenNumber = generateNumber();
-
-  console.log(`Question: ${hiddenNumber}`);
-
   const isHiddenNumberEval = hiddenNumber % 2 === 0;
-  return isHiddenNumberEval ? 'yes' : 'no';
+
+  return { question: hiddenNumber, correctAnswer: isHiddenNumberEval ? 'yes' : 'no' };
 }
 
-function playEven() {
-  return runGameProcess('Answer "yes" if the number is even, otherwise answer "no".', createCorrectAnswer);
-}
-
-export default playEven;
+export default () => {
+  runGameProcess(
+    'Answer "yes" if the number is even, otherwise answer "no".',
+    getRoundData,
+  );
+};

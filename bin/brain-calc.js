@@ -1,12 +1,6 @@
 #!/usr/bin/env node
-import {
-  initialization, playCalc, printResult,
-} from '../src/index.js';
+import playCalcGame from '../src/games/calc.js';
 
 console.log('node bin/brain-calc.js');
 
-initialization();
-
-const isPlayWon = playCalc();
-
-printResult(isPlayWon);
+playCalcGame();

@@ -1,4 +1,4 @@
-import { runGameProcess, generateNumber } from './utils.js';
+import { generateNumber, runGameProcess } from '../index.js';
 
 function getGcd(number1, number2) {
   let a = number1;
@@ -16,17 +16,16 @@ function getGcd(number1, number2) {
   return a;
 }
 
-function createCorrectAnswer() {
+function getRoundData() {
   const number1 = generateNumber() + 1;
   const number2 = generateNumber() + 1;
 
-  console.log(`Question: ${number1} ${number2}`);
-
-  return getGcd(number1, number2).toString();
+  return { question: `${number1} ${number2}`, correctAnswer: getGcd(number1, number2).toString() };
 }
 
-function playGcd() {
-  return runGameProcess('Find the greatest common divisor of given numbers.', createCorrectAnswer);
-}
-
-export default playGcd;
+export default () => {
+  runGameProcess(
+    'Find the greatest common divisor of given numbers.',
+    getRoundData,
+  );
+};
