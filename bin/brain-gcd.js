@@ -1,12 +1,6 @@
 #!/usr/bin/env node
-import {
-  initialization, playGcd, printResult,
-} from '../src/index.js';
+import playGcdGame from '../src/games/gcd.js';
 
 console.log('node bin/brain-gcd.js');
 
-initialization();
-
-const isPlayWon = playGcd();
-
-printResult(isPlayWon);
+playGcdGame();

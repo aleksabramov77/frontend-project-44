@@ -1,8 +1,8 @@
-import { runGameProcess, generateNumber } from './utils.js';
+import { generateNumber, runGameProcess } from '../index.js';
 
 const MIN_PROGRESSION_LENGTH = 5;
 
-function createCorrectAnswer() {
+function getRoundData() {
   const progressionLength = generateNumber(10, MIN_PROGRESSION_LENGTH);
   const startNumberInPosition = generateNumber();
   const progressionStep = generateNumber(5, 1);
@@ -22,13 +22,12 @@ function createCorrectAnswer() {
     }
   }
 
-  console.log(`Question: ${progressionString}`);
-
-  return hiddenNumber.toString();
+  return { question: progressionString, correctAnswer: hiddenNumber.toString() };
 }
 
-function playProgression() {
-  return runGameProcess('What number is missing in the progression?', createCorrectAnswer);
-}
-
-export default playProgression;
+export default () => {
+  runGameProcess(
+    'What number is missing in the progression?',
+    getRoundData,
+  );
+};
