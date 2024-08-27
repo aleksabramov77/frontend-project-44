@@ -1,22 +1,30 @@
-import { generateNumber, runGameProcess } from '../index.js';
+import { runGameProcess } from '../game-process.js';
+import { generateNumber } from '../utils.js';
 
-function generateOperator() {
-  const operators = ['+', '-', '*'];
+const operators = ['+', '-', '*'];
 
-  return operators[Math.floor(operators.length * Math.random())];
-}
+const getRoundData = () => {
+  const operator = operators[generateNumber(0, operators.length - 1)];
+  const number1 = generateNumber(0, 100);
+  const number2 = generateNumber(0, 100);
 
-function getRoundData() {
-  const operator = generateOperator();
-  const max = operator === '*' ? 10 : 100;
-  const leftOperand = generateNumber(max);
-  const rightOperand = generateNumber(max);
+  const expression = `${number1} ${operator} ${number2}`;
 
-  const expression = `${leftOperand} ${operator} ${rightOperand}`;
+  const getCorrectAnswer = () => {
+    switch (operator) {
+      case '-':
+        return number1 - number2;
+      case '+':
+        return number1 + number2;
+      case '*':
+        return number1 * number2;
+    }
+  };
 
-  // eslint-disable-next-line no-eval
-  return { question: expression, correctAnswer: eval(expression).toString() };
-}
+  const correctAnswer = getCorrectAnswer().toString();
+
+  return [expression, correctAnswer];
+};
 
 export default () => {
   runGameProcess(

@@ -1,11 +1,13 @@
-import { generateNumber, runGameProcess } from '../index.js';
+import { runGameProcess } from '../game-process.js';
+import { generateNumber } from '../utils.js';
 
-function getRoundData() {
-  const hiddenNumber = generateNumber();
-  const isHiddenNumberEval = hiddenNumber % 2 === 0;
+const isEven = (number) => number % 2 === 0;
 
-  return { question: hiddenNumber, correctAnswer: isHiddenNumberEval ? 'yes' : 'no' };
-}
+const getRoundData = () => {
+  const hiddenNumber = generateNumber(0, 100);
+
+  return [hiddenNumber, isEven(hiddenNumber) ? 'yes' : 'no'];
+};
 
 export default () => {
   runGameProcess(
