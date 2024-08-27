@@ -1,6 +1,7 @@
-import { generateNumber, runGameProcess } from '../index.js';
+import { runGameProcess } from '../game-process.js';
+import { generateNumber } from '../utils.js';
 
-function getGcd(number1, number2) {
+const getGcd = (number1, number2) => {
   let a = number1;
   let b = number2;
 
@@ -14,14 +15,14 @@ function getGcd(number1, number2) {
 
   a += b;
   return a;
-}
+};
 
-function getRoundData() {
-  const number1 = generateNumber() + 1;
-  const number2 = generateNumber() + 1;
+const getRoundData = () => {
+  const number1 = generateNumber(0, 100);
+  const number2 = generateNumber(0, 100);
 
-  return { question: `${number1} ${number2}`, correctAnswer: getGcd(number1, number2).toString() };
-}
+  return [`${number1} ${number2}`, getGcd(number1, number2).toString()];
+};
 
 export default () => {
   runGameProcess(
