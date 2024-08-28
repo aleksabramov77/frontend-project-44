@@ -1,17 +1,21 @@
 import readFromConsole from './cli.js';
 
+export const greetUser = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readFromConsole('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+
+  return userName;
+};
+
 export const runGameProcess = (gameTask, getRoundData) => {
   const CORRECT_ATTEMPTS_COUNT = 3;
 
-  console.log('Welcome to the Brain Games!');
-
-  const userName = readFromConsole('May I have your name? ');
-
-  console.log(`Hello, ${userName}!`);
+  const userName = greetUser();
 
   console.log(gameTask);
 
-  for (let i = 0; i < CORRECT_ATTEMPTS_COUNT; i++) {
+  for (let i = 0; i < CORRECT_ATTEMPTS_COUNT; i += 1) {
     const [question, correctAnswer] = getRoundData();
 
     console.log(`Question: ${question}`);

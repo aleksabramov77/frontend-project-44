@@ -18,6 +18,8 @@ const getRoundData = () => {
         return number1 + number2;
       case '*':
         return number1 * number2;
+      default:
+        return 'Unknown operator';
     }
   };
 
