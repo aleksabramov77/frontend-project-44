@@ -1,17 +1,5 @@
 import { runGameProcess } from '../game-process.js';
-import { generateNumber } from '../utils.js';
-
-const isPrime = (num) => {
-  if (num <= 1) return false;
-
-  for (let i = 2; i ** 2 <= num; i += 1) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-
-  return true;
-};
+import { generateNumber, isPrime } from '../utils.js';
 
 const getRoundData = () => {
   const hiddenNumber = generateNumber(0, 100);
