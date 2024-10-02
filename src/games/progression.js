@@ -1,18 +1,27 @@
 import { runGameProcess } from '../game-process.js';
-import { generateNumber, getProgressionItems } from '../utils.js';
+import generateNumber from '../utils.js';
 
-const MIN_PROGRESSION_LENGTH = 5;
-const MAX_PROGRESSION_LENGTH = 10;
-const MIN_PROGRESSION_STEP = 1;
-const MAX_PROGRESSION_STEP = 5;
+
+const generateProgression = (length, start, step) => {
+  const result = [];
+
+  for (let i = 0; i < length; i += 1) {
+    const item = start + i * step;
+    result.push(item);
+  }
+
+  return result;
+};
+
 
 const getRoundData = () => {
-  const progressionLength = generateNumber(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
+  const minProgressionLength = 5;
+  const progressionLength = generateNumber(minProgressionLength, 10);
   const startNumber = generateNumber(0, 100);
-  const progressionStep = generateNumber(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP);
-  const hiddenIndex = generateNumber(0, progressionLength - MIN_PROGRESSION_LENGTH);
+  const progressionStep = generateNumber(1, 5);
+  const hiddenIndex = generateNumber(0, progressionLength - 1);
 
-  const progressionItems = getProgressionItems(progressionLength, startNumber, progressionStep);
+  const progressionItems = generateProgression(progressionLength, startNumber, progressionStep);
 
   const hiddenNumber = progressionItems[hiddenIndex];
   progressionItems[hiddenIndex] = '..';

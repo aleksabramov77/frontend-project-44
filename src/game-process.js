@@ -1,26 +1,21 @@
-import readFromConsole from './cli.js';
+import readlineSync from "readline-sync";
 
-export const greetUser = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readFromConsole('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-
-  return userName;
-};
 
 export const runGameProcess = (gameTask, getRoundData) => {
-  const CORRECT_ATTEMPTS_COUNT = 3;
+  const correctsAttemptsCount = 3;
 
-  const userName = greetUser();
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
 
   console.log(gameTask);
 
-  for (let i = 0; i < CORRECT_ATTEMPTS_COUNT; i += 1) {
+  for (let i = 0; i < correctsAttemptsCount; i += 1) {
     const [question, correctAnswer] = getRoundData();
 
     console.log(`Question: ${question}`);
 
-    const userAnswer = readFromConsole('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);

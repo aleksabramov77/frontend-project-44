@@ -1,5 +1,7 @@
 import { runGameProcess } from '../game-process.js';
-import { generateNumber, isEven } from '../utils.js';
+import generateNumber from '../utils.js';
+
+const isEven = (number) => number % 2 === 0;
 
 const getRoundData = () => {
   const hiddenNumber = generateNumber(0, 100);

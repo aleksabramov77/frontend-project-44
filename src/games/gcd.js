@@ -1,5 +1,21 @@
 import { runGameProcess } from '../game-process.js';
-import { generateNumber, getGcd } from '../utils.js';
+import generateNumber from '../utils.js';
+
+const getGcd = (number1, number2) => {
+  let a = number1;
+  let b = number2;
+
+  while (a && b) {
+    if (a > b) {
+      a %= b;
+    } else {
+      b %= a;
+    }
+  }
+
+  a += b;
+  return a;
+};
 
 const getRoundData = () => {
   const number1 = generateNumber(0, 100);
