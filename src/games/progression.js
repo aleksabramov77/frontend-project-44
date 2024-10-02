@@ -1,6 +1,5 @@
 import { runGameProcess } from '../game-process.js';
-import generateNumber from '../utils.js';
-
+import { generateNumber } from '../utils.js';
 
 const generateProgression = (length, start, step) => {
   const result = [];
