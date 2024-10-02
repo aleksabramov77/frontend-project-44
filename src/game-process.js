@@ -1,11 +1,10 @@
-import readlineSync from "readline-sync";
-import { getUserNameFromCli } from "./utils.js";
+import readlineSync from 'readline-sync';
+import { getUserNameFromCli } from './utils.js';
 
-
-export const runGameProcess = (gameTask, getRoundData) => {
+const runGameProcess = (gameTask, getRoundData) => {
   const correctsAttemptsCount = 3;
 
-  const userName = getUserNameFromCli()
+  const userName = getUserNameFromCli();
 
   console.log(gameTask);
 
@@ -29,3 +28,5 @@ export const runGameProcess = (gameTask, getRoundData) => {
 
   console.log(`Congratulations, ${userName}!`);
 };
+
+export default runGameProcess;

@@ -1,4 +1,4 @@
-import { runGameProcess } from '../game-process.js';
+import runGameProcess from '../game-process.js';
 import { generateNumber } from '../utils.js';
 
 const getGcd = (number1, number2) => {

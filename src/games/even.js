@@ -1,4 +1,4 @@
-import { runGameProcess } from '../game-process.js';
+import runGameProcess from '../game-process.js';
 import { generateNumber } from '../utils.js';
 
 const isEven = (number) => number % 2 === 0;
