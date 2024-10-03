@@ -1,9 +1,9 @@
-import runGameProcess from '../game-process.js';
-import { generateNumber } from '../utils.js';
+import runGameProcess from '../gameProcess.js';
+import generateNumber from '../utils.js';
 
 const operators = ['+', '-', '*'];
 
-const calculateExpression = (operator, number1, number2) => {
+const calculate = (operator, number1, number2) => {
   switch (operator) {
     case '-':
       return number1 - number2;
@@ -23,7 +23,7 @@ const getRoundData = () => {
 
   const expression = `${number1} ${operator} ${number2}`;
 
-  const answer = calculateExpression(operator, number1, number2).toString();
+  const answer = calculate(operator, number1, number2).toString();
 
   return [expression, answer];
 };
