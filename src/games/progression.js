@@ -20,7 +20,7 @@ const getRoundData = () => {
 
   const progression = generateProgression(progressionLength, startNumber, progressionStep);
 
-  const hiddenIndex = generateNumber(0, progression - 1);
+  const hiddenIndex = generateNumber(0, progression.length - 1);
   const hiddenNumber = progression[hiddenIndex];
   progression[hiddenIndex] = '..';
   const progressionString = progression.join(' ');
