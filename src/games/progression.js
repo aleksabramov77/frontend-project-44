@@ -1,5 +1,5 @@
-import runGameProcess from '../game-process.js';
-import { generateNumber } from '../utils.js';
+import runGameProcess from '../gameProcess.js';
+import generateNumber from '../utils.js';
 
 const generateProgression = (length, start, step) => {
   const result = [];
@@ -17,13 +17,13 @@ const getRoundData = () => {
   const progressionLength = generateNumber(minProgressionLength, 10);
   const startNumber = generateNumber(0, 100);
   const progressionStep = generateNumber(1, 5);
-  const hiddenIndex = generateNumber(0, progressionLength - 1);
 
-  const progressionItems = generateProgression(progressionLength, startNumber, progressionStep);
+  const progression = generateProgression(progressionLength, startNumber, progressionStep);
 
-  const hiddenNumber = progressionItems[hiddenIndex];
-  progressionItems[hiddenIndex] = '..';
-  const progressionString = progressionItems.join(' ');
+  const hiddenIndex = generateNumber(0, progression - 1);
+  const hiddenNumber = progression[hiddenIndex];
+  progression[hiddenIndex] = '..';
+  const progressionString = progression.join(' ');
 
   return [progressionString, hiddenNumber.toString()];
 };

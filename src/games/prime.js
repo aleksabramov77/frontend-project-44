@@ -1,5 +1,5 @@
-import runGameProcess from '../game-process.js';
-import { generateNumber } from '../utils.js';
+import runGameProcess from '../gameProcess.js';
+import generateNumber from '../utils.js';
 
 const isPrime = (num) => {
   if (num <= 1) return false;
